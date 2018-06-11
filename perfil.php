@@ -84,7 +84,7 @@
                         <td>
 							<select class='form-control input-sm' name="moneda" required>
 										<?php 
-											$sql="select name, symbol from  currencies group by symbol order by name ";
+											$sql="SELECT 'name', 'symbol' FROM  currencies GROUP BY 'symbol' ORDER BY 'name' ";
 											$query=mysqli_query($con,$sql);
 											while($rw=mysqli_fetch_array($query)){
 												$simbolo=$rw['symbol'];
