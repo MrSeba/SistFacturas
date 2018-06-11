@@ -20,7 +20,7 @@
 	$active_perfil="active";	
 	$title="Configuración | Simple Invoice";
 	
-	$query_empresa=mysqli_query($con,"select * from perfil where id_perfil=1");
+	$query_empresa=mysqli_query($con,"SELECT * from perfil where id_perfil=1");
 	$row=mysqli_fetch_array($query_empresa);
 ?>
 <!DOCTYPE html>
@@ -84,11 +84,10 @@
                         <td>
 							<select class='form-control input-sm' name="moneda" required>
 										<?php 
-											$sql="SELECT 'name', 'symbol' FROM  currencies GROUP BY 'symbol' ORDER BY 'name' ";
+											$sql="SELECT symbol FROM  currencies GROUP BY symbol ";
 											$query=mysqli_query($con,$sql);
 											while($rw=mysqli_fetch_array($query)){
 												$simbolo=$rw['symbol'];
-												$moneda=$rw['name'];
 												if ($row['moneda']==$simbolo){
 													$selected="selected";
 												} else {
